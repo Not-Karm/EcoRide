@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EcoRIDE</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    background-color: #ebebda; /* Light Gray */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    color: #2ecc71; /* Light Green color */
+    margin-top: 10px;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 1px;
+}
+
+
+.section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+}
+
+.form-label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.submit-button,
+#search-button {
+    background-color: #4CAF50; /* Green */
+    color: #fff; /* White */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.submit-button:hover,
+#search-button:hover {
+    background-color: #0056b3;
+}
+
+#results {
+    margin: 20px;
+}
+
+#results h3 {
+    font-size: 24px;
+    color: #007BFF;
+}
+
+.commuter-info {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+}
+
+.commuter-info p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+  </style>  
+<body>
+    <h1>Ecoride</h1>
+    <div class="section">
+        <form id="commute-form">
+        <label class="form-label" for="search-locality">Locality:</label>
+        <select class="form-control" id="search-locality">
+            <option value="C G Road">C G Road</option>
+            <option value="Sarkhej Gandhinagar Highway">Sarkhej Gandhinagar Highway</option>
+            <option value="Sardar Patel Ring Road">Sardar Patel Ring Road</option>
+            <option value="Thaltej">Thaltej</option>
+            <option value="Satellite">Satellite</option>
+            <option value="Bodakdev">Bodakdev</option>
+            <option value="Science City Road">Science City Road</option>
+            <option value="Ambli">Ambli</option>
+            <option value="Bopal">Bopal</option>
+            <option value="Prahlad Nagar">Prahlad Nagar</option>
+            <option value="Navrangpura">Navrangpura</option>
+            <option value="Paldi">Paldi</option>
+            <option value="Gulbai Tekra">Gulbai Tekra</option>
+            <option value="Usmanpura">Usmanpura</option>
+            <option value="Ambawadi">Ambawadi</option>
+            <option value="Kathwada">Kathwada</option>
+            <option value="Odav">Odav</option>
+            <option value="Arbuda Nagar">Arbuda Nagar</option>
+            <option value="Vastral">Vastral</option>
+            <option value="Bhuvaldi">Bhuvaldi</option>
+            <option value="Ghatlodiya">Ghatlodiya</option>
+            <option value="Chandkheda">Chandkheda</option>
+            <option value="Sanand">Sanand</option>
+            <option value="Vejalpur">Vejalpur</option>
+            <option value="Maninagar">Maninagar</option>
+            <option value="Vastrapur">Vastrapur</option>
+            <option value="Naranpura">Naranpura</option>
+            <option value="Shilaj">Shilaj</option>
+            <option value="Shela">Shela</option>
+            <option value="Sindhu Bhavan Road">Sindhu Bhavan Road</option>
+        </select>
+        <br>
+        <label class="form-label" for="search-destination">Destination:</label>
+        <select class="form-control" id="search-destination">
+            <option value="C G Road">C G Road</option>
+            <option value="Sarkhej Gandhinagar Highway">Sarkhej Gandhinagar Highway</option>
+            <option value="Sardar Patel Ring Road">Sardar Patel Ring Road</option>
+            <option value="Thaltej">Thaltej</option>
+            <option value="Satellite">Satellite</option>
+            <option value="Bodakdev">Bodakdev</option>
+            <option value="Science City Road">Science City Road</option>
+            <option value="Ambli">Ambli</option>
+            <option value="Bopal">Bopal</option>
+            <option value="Prahlad Nagar">Prahlad Nagar</option>
+            <option value="Navrangpura">Navrangpura</option>
+            <option value="Paldi">Paldi</option>
+            <option value="Gulbai Tekra">Gulbai Tekra</option>
+            <option value="Usmanpura">Usmanpura</option>
+            <option value="Ambawadi">Ambawadi</option>
+            <option value="Kathwada">Kathwada</option>
+            <option value="Odav">Odav</option>
+            <option value="Arbuda Nagar">Arbuda Nagar</option>
+            <option value="Vastral">Vastral</option>
+            <option value="Bhuvaldi">Bhuvaldi</option>
+            <option value="Ghatlodiya">Ghatlodiya</option>
+            <option value="Chandkheda">Chandkheda</option>
+            <option value="Sanand">Sanand</option>
+            <option value="Vejalpur">Vejalpur</option>
+            <option value="Maninagar">Maninagar</option>
+            <option value="Vastrapur">Vastrapur</option>
+            <option value="Naranpura">Naranpura</option>
+            <option value="Shilaj">Shilaj</option>
+            <option value="Shela">Shela</option>
+            <option value="Sindhu Bhavan Road">Sindhu Bhavan Road</option>
+        </select>
+        <br>
+        <button class="submit-button" type="button" id="search-button">Search</button>
+    </form>
+    
+    <div class="section">
+        <h2>Submit Your Information</h2>
+        <form id="data-submission-form">
+            <label class="form-label" for="user-name">Name:</label>
+            <input class="form-control" type="text" id="user-name" name="name" required>
+
+            <label class="form-label" for="user-locality">Locality:</label>
+            <select class="form-control" id="user-locality" name="locality">
+
+            <option value="C G Road">C G Road</option>
+            <option value="Sarkhej Gandhinagar Highway">Sarkhej Gandhinagar Highway</option>
+            <option value="Sardar Patel Ring Road">Sardar Patel Ring Road</option>
+            <option value="Thaltej">Thaltej</option>
+            <option value="Satellite">Satellite</option>
+            <option value="Bodakdev">Bodakdev</option>
+            <option value="Science City Road">Science City Road</option>
+            <option value="Ambli">Ambli</option>
+            <option value="Bopal">Bopal</option>
+            <option value="Prahlad Nagar">Prahlad Nagar</option>
+            <option value="Navrangpura">Navrangpura</option>
+            <option value="Paldi">Paldi</option>
+            <option value="Gulbai Tekra">Gulbai Tekra</option>
+            <option value="Usmanpura">Usmanpura</option>
+            <option value="Ambawadi">Ambawadi</option>
+            <option value="Kathwada">Kathwada</option>
+            <option value="Odav">Odav</option>
+            <option value="Arbuda Nagar">Arbuda Nagar</option>
+            <option value="Vastral">Vastral</option>
+            <option value="Bhuvaldi">Bhuvaldi</option>
+            <option value="Ghatlodiya">Ghatlodiya</option>
+            <option value="Chandkheda">Chandkheda</option>
+            <option value="Sanand">Sanand</option>
+            <option value="Vejalpur">Vejalpur</option>
+            <option value="Maninagar">Maninagar</option>
+            <option value="Vastrapur">Vastrapur</option>
+            <option value="Naranpura">Naranpura</option>
+            <option value="Shilaj">Shilaj</option>
+            <option value="Shela">Shela</option>
+            <option value="Sindhu Bhavan Road">Sindhu Bhavan Road</option>
+        </select>
+        <br>
+        <label class="form-label" for="user-destination">Destination:</label>
+        <select class="form-control" id="user-destination" name="destination">
+            <option value="C G Road">C G Road</option>
+            <option value="Sarkhej Gandhinagar Highway">Sarkhej Gandhinagar Highway</option>
+            <option value="Sardar Patel Ring Road">Sardar Patel Ring Road</option>
+            <option value="Thaltej">Thaltej</option>
+            <option value="Satellite">Satellite</option>
+            <option value="Bodakdev">Bodakdev</option>
+            <option value="Science City Road">Science City Road</option>
+            <option value="Ambli">Ambli</option>
+            <option value="Bopal">Bopal</option>
+            <option value="Prahlad Nagar">Prahlad Nagar</option>
+            <option value="Navrangpura">Navrangpura</option>
+            <option value="Paldi">Paldi</option>
+            <option value="Gulbai Tekra">Gulbai Tekra</option>
+            <option value="Usmanpura">Usmanpura</option>
+            <option value="Ambawadi">Ambawadi</option>
+            <option value="Kathwada">Kathwada</option>
+            <option value="Odav">Odav</option>
+            <option value="Arbuda Nagar">Arbuda Nagar</option>
+            <option value="Vastral">Vastral</option>
+            <option value="Bhuvaldi">Bhuvaldi</option>
+            <option value="Ghatlodiya">Ghatlodiya</option>
+            <option value="Chandkheda">Chandkheda</option>
+            <option value="Sanand">Sanand</option>
+            <option value="Vejalpur">Vejalpur</option>
+            <option value="Maninagar">Maninagar</option>
+            <option value="Vastrapur">Vastrapur</option>
+            <option value="Naranpura">Naranpura</option>
+            <option value="Shilaj">Shilaj</option>
+            <option value="Shela">Shela</option>
+            <option value="Sindhu Bhavan Road">Sindhu Bhavan Road</option>
+        </select>
+        <br>
+        <label class="form-label" for="user-phone">Phone Number:</label>
+            <input class="form-control" type="tel" id="user-phone" name="phone" required>
+            <label class="form-label" for="user-email">Email:</label>
+            <input class="form-control" type="email" id="user-email" name="email" required>
+            <button class="submit-button" type="button" id="submit-data-button">Submit</button>
+        </form>
+
+    <div id="results"></div>
+    
+    <script>
+        const form = document.getElementById('commute-form');
+        const searchButton = document.getElementById('search-button');
+        const results = document.getElementById('results');
+        const submitDataButton = document.getElementById('submit-data-button');
+    
+        searchButton.addEventListener('click', () => {
+            const searchLocality = document.getElementById('search-locality').value;
+            const searchDestination = document.getElementById('search-destination').value;
+    
+            fetch(`/search?locality=${searchLocality}&destination=${searchDestination}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length === 0) {
+                        results.innerHTML = 'No matches found.';
+                    } else {
+                        results.innerHTML = '<h3>Matched Commuters:</h3>';
+                        data.forEach(user => {
+                            const commuterInfo = document.createElement('div');
+                            commuterInfo.className = 'commuter-info';
+                            commuterInfo.innerHTML = `
+                                <p><strong>Name:</strong> ${user.name}</p>
+                                <p><strong>Locality:</strong> ${user.locality}</p>
+                                <p><strong>Destination:</strong> ${user.destination}</p>
+                                <p><strong>Phone:</strong> ${user.phone}</p>
+                                <p><strong>Email:</strong> ${user.email}</p>
+                            `;
+                            results.appendChild(commuterInfo);
+                        });
+                    }
+                })
+                .catch(error => {
+                    alert('An error occurred while searching.');
+                    console.error(error);
+                });
+        });
+    
+        submitDataButton.addEventListener('click', () => {
+            const name = document.getElementById('user-name').value;
+            const locality = document.getElementById('user-locality').value;
+            const destination = document.getElementById('user-destination').value;
+            const phone = document.getElementById('user-phone').value;
+            const email = document.getElementById('user-email').value;
+    
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, locality, destination, phone, email }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                alert('An error occurred while submitting data.');
+                console.error(error);
+            });
+        });
+    </script>
+    
+    
+</body>
+</html>
+
