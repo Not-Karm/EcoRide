@@ -48,4 +48,4 @@ The following API endpoints are available:
 * `GET /uniqueLocalities`: Retrieves a list of unique user localities.
 * `GET /uniqueDestinations`: Retrieves a list of unique user destinations.
 
-For any inquiries, please reach out at karmrajput13@gmail.com
+For any questions, please reach out at karmrajput13@gmail.com
